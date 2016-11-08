@@ -7,7 +7,7 @@
     "test": "mocha --require test/helpers/setup.js",
     "lint": "standard",
     "build": "webpack",
-    "watch": "webpack --watch",
+    "watch": "webpack --watch"
   },
   "author": "Joe Marion <joemarion.io@gmail.com>",
   "license": "MIT",
