@@ -1,13 +1,13 @@
 webpackJsonp([1],{
 
-/***/ 246:
+/***/ 442:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var React = __webpack_require__(1);
 
-	var _require = __webpack_require__(225),
+	var _require = __webpack_require__(238),
 	    connector = _require.connector;
 
 	var _React$PropTypes = React.PropTypes,
@@ -28,7 +28,24 @@ webpackJsonp([1],{
 	    return React.createElement(
 	      'div',
 	      { className: 'home-info' },
-	      this.props.test_message
+	      React.createElement(
+	        'label',
+	        null,
+	        React.createElement('input', { type: 'checkbox', value: 'Volume 1' }),
+	        'Volume 1'
+	      ),
+	      React.createElement(
+	        'label',
+	        null,
+	        React.createElement('input', { type: 'checkbox', value: 'Volume 2' }),
+	        'Volume 2'
+	      ),
+	      React.createElement(
+	        'label',
+	        null,
+	        React.createElement('input', { type: 'checkbox', value: 'Volume 3' }),
+	        'Volume 3'
+	      )
 	    );
 	  }
 	});

@@ -1,9 +1,11 @@
 const redux = require('redux')
 const reactRedux = require('react-redux')
 const { questions } = require('../public/data')
+import { reducer as formReducer } from 'redux-form'
 
 const initialState = {
   test_message: 'test',
+  form: formReducer,
   questions
 }
 
