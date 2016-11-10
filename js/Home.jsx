@@ -1,19 +1,30 @@
 const React = require('react')
 const { connector } = require('./Store')
-const { object, string, arrayOf } = React.PropTypes
+const { object, arrayOf, func } = React.PropTypes
 
 const Home = React.createClass({
   propTypes: {
-    route: object,
-    test_message: string,
-    questions: arrayOf(object)
+    questions: arrayOf(object),
+    setQuizQuestions: func,
+    removeQuizQuestions: func
+  },
+  selectVolume (event) {
+    if (event.target.checked) {
+      this.props.setQuizQuestions(event.target.value)
+    } else {
+      this.props.removeQuizQuestions(event.target.value)
+    }
   },
   render () {
     return (
-      <div className='home-info'>
-        <label><input type='checkbox' value='Volume 1' />Volume 1</label>
-        <label><input type='checkbox' value='Volume 2' />Volume 2</label>
-        <label><input type='checkbox' value='Volume 3' />Volume 3</label>
+      <div className='home-container'>
+        <div className='home-info'>
+          <h1 className='title'>TACP Quiz</h1>
+          <label><input type='checkbox' value='1' onChange={this.selectVolume} />Volume 1</label>
+          <label><input type='checkbox' value='2' onChange={this.selectVolume} />Volume 2</label>
+          <label><input type='checkbox' value='3' onChange={this.selectVolume} />Volume 3</label>
+          <button>Start Quiz</button>
+        </div>
       </div>
     )
   }

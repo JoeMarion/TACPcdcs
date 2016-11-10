@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;;
+}
+
+body {
+  text-align: center;
+}
+
+/* Set Background image and cover page */
+.home-container {
+  background: url('./img/TACP_Quiz_Background.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+}
+
+/* Quiz Select/Start */
+.home-info {
+  width: 800px;
+  margin: 0 auto;
+  position: relative;
+  top: 40%;
+  transform: translateY(-60%);
+}

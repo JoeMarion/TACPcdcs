@@ -1,6 +1,6 @@
 webpackJsonp([1],{
 
-/***/ 442:
+/***/ 260:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12,39 +12,60 @@ webpackJsonp([1],{
 
 	var _React$PropTypes = React.PropTypes,
 	    object = _React$PropTypes.object,
-	    string = _React$PropTypes.string,
-	    arrayOf = _React$PropTypes.arrayOf;
+	    arrayOf = _React$PropTypes.arrayOf,
+	    func = _React$PropTypes.func;
 
 
 	var Home = React.createClass({
 	  displayName: 'Home',
 
 	  propTypes: {
-	    route: object,
-	    test_message: string,
-	    questions: arrayOf(object)
+	    questions: arrayOf(object),
+	    setQuizQuestions: func,
+	    removeQuizQuestions: func
+	  },
+	  selectVolume: function selectVolume(event) {
+	    if (event.target.checked) {
+	      this.props.setQuizQuestions(event.target.value);
+	    } else {
+	      this.props.removeQuizQuestions(event.target.value);
+	    }
 	  },
 	  render: function render() {
 	    return React.createElement(
 	      'div',
-	      { className: 'home-info' },
+	      { className: 'home-container' },
 	      React.createElement(
-	        'label',
-	        null,
-	        React.createElement('input', { type: 'checkbox', value: 'Volume 1' }),
-	        'Volume 1'
-	      ),
-	      React.createElement(
-	        'label',
-	        null,
-	        React.createElement('input', { type: 'checkbox', value: 'Volume 2' }),
-	        'Volume 2'
-	      ),
-	      React.createElement(
-	        'label',
-	        null,
-	        React.createElement('input', { type: 'checkbox', value: 'Volume 3' }),
-	        'Volume 3'
+	        'div',
+	        { className: 'home-info' },
+	        React.createElement(
+	          'h1',
+	          { className: 'title' },
+	          'TACP Quiz'
+	        ),
+	        React.createElement(
+	          'label',
+	          null,
+	          React.createElement('input', { type: 'checkbox', value: '1', onChange: this.selectVolume }),
+	          'Volume 1'
+	        ),
+	        React.createElement(
+	          'label',
+	          null,
+	          React.createElement('input', { type: 'checkbox', value: '2', onChange: this.selectVolume }),
+	          'Volume 2'
+	        ),
+	        React.createElement(
+	          'label',
+	          null,
+	          React.createElement('input', { type: 'checkbox', value: '3', onChange: this.selectVolume }),
+	          'Volume 3'
+	        ),
+	        React.createElement(
+	          'button',
+	          null,
+	          'Start Quiz'
+	        )
 	      )
 	    );
 	  }
